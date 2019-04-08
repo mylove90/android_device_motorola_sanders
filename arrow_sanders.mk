@@ -19,7 +19,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_n_mr1.mk)
 
-# Inherit from sanders device
+# Installs gsi keys into ramdisk, to boot a GSI with verified boot.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
+	
+# Inherit from potter device
 $(call inherit-product, device/motorola/sanders/device.mk)
 
 # Inherit some cmmon arrow stuff.
